@@ -6,4 +6,6 @@ WORKDIR /var/www/html
 
 EXPOSE 8083
 
-CMD [ "/usr/local/bin/php", "-S", "localhost:8083" ]
+# Set host value to 0.0.0.0 to listen to any host outside docker
+# Link: https://serverfault.com/questions/1084915/still-confused-why-docker-works-when-you-make-a-process-listen-to-0-0-0-0-but-no
+CMD [ "/usr/local/bin/php", "-S", "0.0.0.0:8083" ]
